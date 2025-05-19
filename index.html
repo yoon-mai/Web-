@@ -1,0 +1,478 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="images/icon-fab.png">
+    <title>ON SPOT AUTO CARE</title>
+	<meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="css/style.css" />
+    <meta name="robots" content="noindex, nofollow">
+    <!-- CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ancizar+Serif:ital,wght@0,300..900;1,300..900&family=Architects+Daughter&family=Lora:ital,wght@0,400..700;1,400..700&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDts9C9iWNF83ExezBXJLIJ0g2dwoERg08&callback=initMap"></script>
+    <style>
+        html { height: 100% }
+        body { height: 100% }
+        #map { height: 100%; width: 100%}
+    </style>
+    <script src="script.js"></script>
+  </head>
+
+  <body>
+    <header id="cs-navigation">
+        <!-- ============================================ -->
+        <!--                 Navigation                   -->
+        <!-- ============================================ -->
+        <div class="cs-container">
+            <!--Nav Logo-->
+            <a href="" class="cs-logo" aria-label="back to home">
+                <img src="images/logo.png" alt="logo" width="210" height="29" aria-hidden="true" decoding="async">
+            </a>
+            <!--Navigation List-->
+            <nav class="cs-nav" role="navigation">
+                <!--Mobile Nav Toggle-->
+                <button class="cs-toggle" aria-label="mobile menu toggle">
+                    <div class="cs-box" aria-hidden="true">
+                        <span class="cs-line cs-line1" aria-hidden="true"></span>
+                        <span class="cs-line cs-line2" aria-hidden="true"></span>
+                        <span class="cs-line cs-line3" aria-hidden="true"></span>
+                    </div>
+                </button>
+                <!-- We need a wrapper div so we can set a fixed height on the cs-ul in case the nav list gets too long from too many dropdowns being opened and needs to have an overflow scroll. This wrapper acts as the background so it can go the full height of the screen and not cut off any overflowing nav items while the cs-ul stops short of the bottom of the screen, which keeps all nav items in view no matter how mnay there are-->
+                <div class="cs-ul-wrapper">
+                    <ul id="cs-expanded" class="cs-ul" aria-expanded="false">
+                        <li class="cs-li">
+                            <a href="" class="cs-li-link cs-active">
+                                Home
+                            </a>
+                        </li>
+                        <li class="cs-li">
+                            <a href="" class="cs-li-link">
+                                About
+                            </a>
+                        </li>
+                        <li class="cs-li">
+                            <a href="" class="cs-li-link">
+                                Service
+                            </a>
+                        </li>
+                        <li class="cs-li">
+                            <a href="" class="cs-li-link">
+                                Contact
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <a href="tel: +61426290300"  onclick="myFunction()"  class="cs-button-solid cs-nav-button">+61 426 290 300</a>
+
+        </div>
+        <div class="main-content">
+        <button class="open-button" onclick="openForm()">Booking Form</button>
+        <div class="form-popup" id="myForm">
+            <form action="https://yoon-mai.github.io/Web/" class="form-container">
+              <h1 class="rightbutton">Contact us</h1>
+              <label for="name"><b class="b">Name</b></label>
+              <input type="text" placeholder="Enter Name" name="name" required>
+          
+              <label for="name"><b class="b">Email</b></label>
+              <input type="text" placeholder="Enter Email" name="name" required><br/>
+              
+              <label for="name"><b class="b">Phone</b></label>
+              <input type="text" placeholder="Enter Phone Number" name="name" required><br/>
+              
+              <label for="name"><b class="b">Message</b></label>
+              <input type="text" placeholder="Enter Message" name="name" required><br/>
+          
+              <button type="name" class="btn">Send Message</button>
+              <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+            </form>
+          </div>
+        </div>      
+    </header>
+    
+    <main>
+      <section class="content-section">
+        <!-- ============================================ -->
+        <!--                    Hero                      -->
+        <!-- ============================================ -->
+        <div class="slideshowContainer">
+            <!-- Replace the image 'src' with the images in your project.
+            Javascript is set up so that you can add as many images as you like, but make sure that you match the number of 'circle' span elements (below) to the number of images -->
+              <img class="imageSlides" alt="background1" src="images/background1.png">
+              <section class="container-hero">
+                    <div class="image-data">
+                    <h2>Your Car, Our Care <br />
+                        -- On The Spot!
+                    </h2>
+                    <p>At On Spot Autocare, we're dedicated to providing<br />
+                        top-notch automotive care, right where you need it.
+                    </p>
+                  </div>
+              </section>
+              <img class="imageSlides" alt="background2" src="images/background2.png">
+              <img class="imageSlides" alt="background3" src="images/background3.png">
+              
+            <!-- I would recommend to replace these 'span' elements with 'img' files
+            for each the left and right arrow that fits your project, and size accordingly.
+            I've shown 'span' elements because I didn't want to upload files. -->
+              <span id ="leftArrow" class="slideshowArrow">&#8249;</span>
+              <span id ="rightArrow" class="slideshowArrow">&#8250;</span>
+              
+              <div class="slideshowCircles">
+            <!-- Filled 'dot' class is set to first image in slideshow, and then via Javascript the filled 'dot' class follows the current image.
+            Make sure you match the number of these 'circle' span elements to the number of images in your slideshow. -->
+                <span class="circle dot"></span>
+                <span class="circle"></span>
+                <span class="circle"></span>
+              </div>
+              
+            </div>
+        <hr class="cp_hr05" />   
+      </section>  
+      
+    <script>//since Javscript doesn't work well I moved here
+        // IMAGE SLIDES & CIRCLES ARRAYS, & COUNTER
+        var imageSlides = document.getElementsByClassName('imageSlides');
+        var circles = document.getElementsByClassName('circle');
+        var leftArrow = document.getElementById('leftArrow');
+        var rightArrow = document.getElementById('rightArrow');
+        var counter = 0;
+
+        // HIDE ALL IMAGES FUNCTION
+        function hideImages() {
+          for (var i = 0; i < imageSlides.length; i++) {
+            imageSlides[i].classList.remove('visible');
+          }
+        }
+
+        // REMOVE ALL DOTS FUNCTION
+        function removeDots() {
+          for (var i = 0; i < imageSlides.length; i++) {
+            circles[i].classList.remove('dot');
+          }
+        }
+
+        // SINGLE IMAGE LOOP/CIRCLES FUNCTION
+        function imageLoop() {
+          var currentImage = imageSlides[counter];
+          var currentDot = circles[counter];
+          currentImage.classList.add('visible');
+          removeDots();
+          currentDot.classList.add('dot');
+          counter++;
+        }
+
+        // LEFT & RIGHT ARROW FUNCTION & CLICK EVENT LISTENERS
+        function arrowClick(e) {
+          var target = e.target;
+          if (target == leftArrow) {
+            clearInterval(imageSlideshowInterval);
+            hideImages();
+            removeDots();
+            if (counter == 1) {
+              counter = (imageSlides.length - 1);
+              imageLoop();
+              imageSlideshowInterval = setInterval(slideshow, 5000);
+            } else {
+              counter--;
+              counter--;
+              imageLoop();
+              imageSlideshowInterval = setInterval(slideshow, 5000);
+            }
+          } 
+          else if (target == rightArrow) {
+            clearInterval(imageSlideshowInterval);
+            hideImages();
+            removeDots();
+            if (counter == imageSlides.length) {
+              counter = 0;
+              imageLoop();
+              imageSlideshowInterval = setInterval(slideshow, 5000);
+           } else {
+              imageLoop();
+              imageSlideshowInterval = setInterval(slideshow, 4000);
+            }
+          }
+        }
+
+        leftArrow.addEventListener('click', arrowClick);
+        rightArrow.addEventListener('click', arrowClick);
+
+
+        // IMAGE SLIDE FUNCTION
+        function slideshow() {
+          if (counter < imageSlides.length) {
+            imageLoop();
+          } else {
+            counter = 0;
+            hideImages();
+            imageLoop();
+          }
+        }
+
+        // SHOW FIRST IMAGE, & THEN SET & CALL SLIDE INTERVAL
+        setTimeout(slideshow, 1000);
+        var imageSlideshowInterval = setInterval(slideshow, 5000);
+    </script>
+    
+      <section class="content-section">
+        <!-- ============================================ -->
+        <!--                 Side By Side                 -->
+        <!-- ============================================ -->
+        <section id="RPsbs-248">
+            <div class="cs-container">
+                <!-- Left Image Section -->
+                <picture class="cs-picture">
+                    <source media="(max-width: 600px)" srcset="images/tools.png">
+                    <source media="(min-width: 601px)" srcset="images/tools.png">
+                    <img loading="lazy" decoding="async" src="images/tools.png" alt="hiker" width="434" height="434" aria-hidden="true">
+                </picture>
+                <!-- Right Content Section-->
+                <div class="cs-content">
+                    <h2 class="cs-title">24/7 On Spot Services</h2>
+                    <p class="cs-text">
+                        Revitalize your vehicle's performance with our top-notch car repair service. Read more about our services.
+                    </p>
+                    <a class="cs-button-solid" aria-label="learn more about our programs" href="">SERVICES</a>
+                </div>
+            </div>
+        </section>
+        <hr class="cp_hr05" />                
+      </section>
+      <section class="content-section">
+        <!-- ============================================ -->
+        <!--              Side By Side Reverse            -->
+        <!-- ============================================ -->
+        <section id="RPsbsr-248">
+            <div class="cs-container">
+                <!-- Left Image Section -->
+                <picture class="cs-picture">
+                    <source media="(max-width: 600px)" srcset="images/tech1.png">
+                    <source media="(min-width: 601px)" srcset="images/tech1.png">
+                    <img loading="lazy" decoding="async" src="images/tech1.png" alt="hiker" width="434" height="434" aria-hidden="true">
+                </picture>
+                <!-- Right Content Section-->
+                <div class="cs-content">
+                    <h2 class="cs-title">51 Potton Ave, Rosebud VIC 3939</h2>
+                        <p><b><a class="one" href="https://maps.app.goo.gl/DMePNpYu3ysYXqRC9" target="_blank">Find out more about our location.</a></b></p>
+                    <h2 class="cs-title">Why choose us?</h2>
+                        <p><b><a class="one" href="https://yoon-mai.github.io/Web/" target="_blank">See what makes us special.</a></b></p>
+                    </div>
+                <!-- Creates the faded lines on tablet -->
+                <span aria-hidden="true" class="cs-lines"></span>
+            </div>
+            <!-- Background Image -->
+            <picture class="cs-background">
+                <source media="(max-width: 600px)" srcset="images/back_black.png">
+                <source media="(min-width: 601px)" srcset="images/back_black.png">
+                <img loading="lazy" decoding="async" src="images/back_black.png" alt="black" width="2250" height="1500" aria-hidden="true">
+            </picture>
+        </section>
+        <hr class="cp_hr05" />                
+      </section>
+      <section class="content-section">
+        <!-- ============================================ -->
+        <!--                   Contact                    -->
+        <!-- ============================================ -->
+        <section id="contact-2320">
+          <div class="cs-container">
+              <div class="cs-content">
+                  <h2 class="cs-title">Get In Touch With On Spot Services</h2>
+                  <!--Form-->
+                  <form class="cs-form" id="cs-form-323-2320" name="Contact Form" method="post">
+                      <label class="cs-label">
+                          Name
+                          <input class="cs-input" required type="text" name="name" placeholder="Name">
+                      </label>
+                      <label class="cs-label cs-email">
+                          Email
+                          <input class="cs-input" required type="email" name="email" placeholder="Email">
+                      </label>
+                      <label class="cs-label cs-phone">
+                          Phone
+                          <input class="cs-input" required type="tel" name="phone" placeholder="Phone">
+                      </label>
+                      <label class="cs-label cs-services">
+                          Services
+                          <select class="cs-input" name="Services">
+                              <option value="" disabled selected>Select a Service</option>
+                              <option value="New Construction">Car Tire</option>
+                              <option value="Remodels">Car Gasoline</option>
+                              <option value="Cabinets">Else...</option>
+                          </select>
+                      </label>
+                      <label class="cs-label">
+                          Message
+                          <textarea class="cs-input cs-textarea" required name="Message" placeholder="Write message..."></textarea>
+                      </label>
+                      <button class="cs-button-solid cs-submit" type="submit">Send Message</button>
+                  </form>
+              </div>
+              <!--Map Image, pin is made in the Figma then export as one image-->
+              <div class="cs-map">
+                <div class="cs-iframe-wrapper">
+                    <iframe src="https://maps.app.goo.gl/DMePNpYu3ysYXqRC9"  title="location on Google Maps" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class="cs-box">
+                    <img class="cs-icon" decoding="async" loading="lazy" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/yellow-pin.svg" alt="icon" width="40" height="40" aria-hidden="true">
+                    <div class="cs-flex">
+                        <span class="cs-header">Location</span>
+                        <span class="cs-address">51 Potton Ave, Rosebud VIC 3939
+                        </span>
+                    </div>
+                </div>
+                <div id="map"></div>
+                <script>//since Javscript doesn't work well I moved here
+                  var MyLatLng = new google.maps.LatLng(-38.36470340525365, 144.91074894810976);
+                  var Options = {
+                   zoom: 15,
+                   center: MyLatLng,
+                   mapTypeId: 'roadmap'
+                  };
+                  var map = new google.maps.Map(document.getElementById('map'), Options);
+                </script>
+              </div>
+          </div>
+          <div class="cs-container2">
+              <picture class="cs-background">
+                  <!--Mobile Image-->
+                  <source media="(max-width: 600px)" srcset="images/back_car.png">
+                  <!--Tablet and above Image-->
+                  <source media="(min-width: 601px)" srcset="images/back_car.png">
+                  <img loading="lazy" decoding="async" src="images/back_car.png" alt="house" width="1280" height="243">
+              </picture>
+              <div class="cs-hours">
+                  <div class="cs-topper">Working Hours</div>
+                  <span class="cs-hours-info">24/7 </span>
+              </div>
+          </div>
+        </section>
+        <hr class="cp_hr05" />                      
+      </section>
+      <section class="content-section">
+        <!-- ============================================ -->
+        <!--                   Reviews                    -->
+        <!-- ============================================ -->
+        <section id="reviews-1088">
+          <div class="cs-container">
+              <div class="cs-content">
+                  <span class="cs-topper">Reviews from Google map</span>
+                  <h2 class="cs-title">Happy Customer Feedback About Our Service</h2>
+                  <span class="cs-lower">45 reviews <a class="cs-numbers">4.8</a>
+                    <img class="cs-stars" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/yellow-stars.svg" alt="stars" width="150" height="30">
+                  </span>
+                  
+              </div>
+              <ul class="cs-card-group">
+                  <li class="cs-item">
+                      <img class="cs-image" src="images/reviewer_1.png" alt="profile" width="112" height="112" aria-hidden="true" decoding="async" loading="lazy">
+                      <img class="cs-icon" src="images/quote.png" alt="icon" width="52" height="36" aria-hidden="true" decoding="async" loading="lazy">
+                      <p class="cs-item-text">
+                        "Would recommend him to order people lokking for mechanics."
+                      </p>
+                  </li>
+                  <li class="cs-item">
+                      <img class="cs-image" src="images/reviewer_2.png" alt="profile" width="112" height="112" aria-hidden="true" decoding="async" loading="lazy">
+                      <img class="cs-icon" src="images/quote.png" alt="icon" width="52" height="36" aria-hidden="true" decoding="async" loading="lazy">
+                      <p class="cs-item-text">
+                        "His service is excellent and work is of the highest qualily."
+                      </p>
+                  </li>
+                  <li class="cs-item">
+                      <img class="cs-image" src="images/reviewer_3.png" alt="profile" width="112" height="112" aria-hidden="true" decoding="async" loading="lazy">
+                      <img class="cs-icon" src="images/quote.png" alt="icon" width="52" height="36" aria-hidden="true" decoding="async" loading="lazy">
+                      <p class="cs-item-text">
+                        "Quick responce and genuine price with extreme knowledge."
+                      </p>
+                  </li>
+              </ul>
+          </div>
+        </section>    
+        <hr class="cp_hr05" />      
+      </section>
+    </main>
+  </body>  
+  <footer id="cs-footer-1292">
+    <!-- ============================================ -->
+    <!--                   Footer                     -->
+    <!-- ============================================ -->
+      <div class="cs-container">      
+          <!-- Logo Group -->
+          <div class="cs-logo-group">
+              <a aria-label="go back to home" class="cs-logo" href="">
+                  <img class="cs-logo-img" aria-hidden="true" loading="lazy" decoding="async" src="images/logo.png" alt="logo" width="240" height="32">
+              </a>
+              <p class="cs-text">
+                At On Spot Autocare, we're dedicated to providing top-notch automotive care, right where you need it.
+              </p>
+              <a href="Onspotexpert@gmail.com" class="cs-link">
+                  <img class="cs-link-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/construction-mail.svg" alt="icon" width="24" height="24">
+                  Onspotexpert@gmail.com
+              </a>
+          </div>
+          <!-- Links -->
+          <ul class="cs-nav">
+              <li class="cs-nav-li">
+                  <span class="cs-header">Our Services</span>
+              </li>
+              <li class="cs-nav-li">
+                  <a class="cs-nav-link" href="">Auto Maintenance</a>
+              </li>
+              <li class="cs-nav-li">
+                  <a class="cs-nav-link" href="">Brake Repair Pads & Rotors Shocks,</a>
+              </li>
+              <li class="cs-nav-li">
+                  <a class="cs-nav-link" href="">Struts Replacement</a>
+              </li>
+              <li class="cs-nav-li">
+                <a class="cs-nav-link" href="">System Diagnosis</a>
+              </li>
+              <li class="cs-nav-li">
+                <a class="cs-nav-link" href="">Repair Air Conditioning Services</a>
+              </li>
+          </ul>
+          <ul class="cs-nav">
+              <li class="cs-nav-li">
+                  <span class="cs-header">Contact Info</span>
+              </li>
+              <li class="cs-nav-li">
+                <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Contact-Page/phone-stroke.svg" alt="phone" width="24" height="24">
+                <a class="cs-nav-link cs-phone" href="tel:+61426290300">+61426290300</a>
+              </li>
+              <li class="cs-nav-li">
+                <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Contact-Page/email-stroke.svg" alt="email" width="24" height="24">
+                <a class="cs-nav-link cs-email" href="mailto:info@codestitch.com">Onspotexpert@gmail.com</a>
+              </li>
+              <li class="cs-nav-li">
+                <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Contact-Page/pin-stroke.svg" alt="pin" width="24" height="24">
+                <a class="cs-nav-link cs-address" href="https://maps.app.goo.gl/z71eDxtgnYGgJSMa8" target="_blank" rel="noopener">
+                    Address: Mornington <br >Victoria 3931
+                </a>
+              </li>
+              <li class="cs-nav-li">
+                <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="images/clock.png" alt="pin" width="24" height="24">
+                <a class="cs-nav-link cs-time" href="https://maps.app.goo.gl/z71eDxtgnYGgJSMa8" target="_blank" rel="noopener">
+                    Timing: 24*7
+                </a>
+              </li>
+          </ul>
+      </div>
+      <div class="cs-bottom">
+          <span class="cs-copyright">Copyright© 2023. 
+              <a class="cs-copyright-link" href="">Stitch Construction.</a>
+              All Right Reserved.
+          </span>
+          <a href="" class="cs-copyright-link">Terms of Service</a>
+          <a href="" class="cs-copyright-link">Privacy Policy</a>
+      </div>
+      <!--Floating Cirlces-->
+      <div class="cs-floater" aria-hidden="true"></div>
+    </footer>
+</html>
